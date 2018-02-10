@@ -1,0 +1,26 @@
+{
+	"name": "fhmj/pdo-flexible-search",
+	"description": "Flexible SQL search queries in PHP using arrays",
+	"type": "library",
+	"keywords": ["pdo", "sql", "database"],
+	"homepage": "https://github.com/fhmj/pdo-flexible-search",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Frank Hjorth",
+			"email": "frankhjorth@gmail.com"
+		}
+	],
+	"require": {
+		"php": "~7.1"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "~6.4"
+	},
+	"autoload": {
+		"psr-4": {"FHMJ\\PdoFlexibleSearch\\": "src/"}
+	},
+	"autoload-dev": {
+		"psr-4": {"FHMJ\\PdoFlexibleSearch\\": "tests/"}
+	}
+}
