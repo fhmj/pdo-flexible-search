@@ -32,7 +32,7 @@ $search = [
 ];
 
 // perform query
-$query = $pdo->search(':mySearch', $search)->query($sql);
+$query = $pdo->search('mySearch', $search)->query($sql);
 $query->fetchAll(\PDO::FETCH_ASSOC);
 
 /*

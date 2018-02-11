@@ -18,7 +18,7 @@ class Pdo extends \PDO{
 	*/
 	public function search(string $placeholderName = '', array $andConditions, array $orConditions = []){
 		$this->searchConditions = [
-			'placeholder' => $placeholderName,
+			'placeholder' => trim($placeholderName, ':'),
 			'conditions' => [$andConditions, $orConditions]
 		];
 		
@@ -72,7 +72,7 @@ class Pdo extends \PDO{
 		$placeholders = [];
 		
 		$search = $driver->search($this->searchConditions['conditions'][0], $this->searchConditions['conditions'][1]);
-		$regex = '&'.$this->searchConditions['placeholder'].'&';
+		$regex = '&:\b'.$this->searchConditions['placeholder'].'\b&';
 		
 		$statement = preg_replace($regex, $search['whereClause'], $statement);
 		
